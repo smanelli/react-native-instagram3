@@ -7,8 +7,8 @@ import PhotoSection from './photo-section'
 //const {manifest}= Constants;
 //import Expo from "expo";
 //const { manifest } = Expo.Constants;
-//const uri = `http://${manifest.debuggerHost.split(':').shift()}:3000`;
-const uri = `http://192.168.43.58:3000`;
+//const uri = `http://${manifest.debuggerHost.split(':').shift()}:3000`; 
+const uri = `http://10.0.0.38:3000`;
 //console.log(uri)
 //const uri = `http://${manifest.debuggerHost.split(':').shift()}:4000`;
 //console.log (uri)
@@ -55,7 +55,7 @@ export default class PhotoFeed extends Component {
   getPhotos() {
       console.log('getPhotos')
     return this.state.photos.map(_photo => {
-        return (<PhotoSection photo={_photo} />)
+        return (<PhotoSection key={_photo.key} photo={_photo} />)
 
     })
   }
